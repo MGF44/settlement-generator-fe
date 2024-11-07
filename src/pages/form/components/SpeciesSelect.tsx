@@ -15,6 +15,7 @@ function SpeciesSelect() {
     <FormControlLabel
       control={<Switch value={c.name} />}
       label={c.name}
+      key={c.name}
       checked={isChecked(c)}
       labelPlacement="bottom"
       sx={{ flex: 1 }}

@@ -48,7 +48,6 @@ function ClimateSelect({ sx }: { sx: SxProps<Theme> }) {
         onChange={(e) => onChange(e.target.value)}
         label="Climate"
         fullWidth
-        
       >
         {getOptions()}
       </Select>

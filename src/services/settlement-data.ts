@@ -1,5 +1,6 @@
 import { IClimate } from "../types/climate";
 import ILandform from "../types/landform";
+import SettlementOptions from "../types/settlement-options";
 import ISpecies from "../types/species";
 
 
@@ -11,6 +12,7 @@ interface SettlementDataStorage {
   citySize: () => Promise<string[]>;
   incrementors: () => Promise<string[]>;
   mLevels: () => Promise<string[]>;
+  genSettlement: (body: SettlementOptions) => Promise<Response>;
 }
 
 const SettlementData = (): SettlementDataStorage => {
@@ -40,6 +42,14 @@ const SettlementData = (): SettlementDataStorage => {
     return new Promise((resolve) => resolve(["NO_MAGIC", "LOW_MAGIC", "COMMON_MAGIC", "HIGH_MAGIC"]))
   }
 
+  const genSettlement = async (body: SettlementOptions) => {
+    return await fetch('http://localhost:3000/genset', {
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
+
+  }
+
   return {
     climates,
     landforms,
@@ -47,7 +57,8 @@ const SettlementData = (): SettlementDataStorage => {
     archetypes,
     citySize,
     incrementors,
-    mLevels
+    mLevels,
+    genSettlement
   }
 }
 

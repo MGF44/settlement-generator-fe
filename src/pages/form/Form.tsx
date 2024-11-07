@@ -1,9 +1,7 @@
-import { useContext, useEffect } from "react";
+import { ChangeEvent, useContext, useEffect } from "react";
 import "./Form.scss";
 import { FormContext, FormDispatchContext } from "../../contexts/FormContext";
-import SettlementData, {
-  SettlementDataStorage,
-} from "../../services/settlement-data";
+import { SettlementDataStorage } from "../../services/settlement-data";
 import { IClimate } from "../../types/climate";
 import ILandform from "../../types/landform";
 import Generic from "../../types/generic";
@@ -14,6 +12,7 @@ import ClimateSelect from "./components/ClimateSelect";
 import LandformSelect from "./components/LandformSelect";
 import SpeciesSelect from "./components/SpeciesSelect";
 import { FormState } from "../../reducers/form";
+import SettlementOptions from "../../types/settlement-options";
 
 const fetchData = async (
   dispatch: (arg0: {
@@ -47,18 +46,25 @@ const fetchData = async (
     .then((content: string[]) => dispatch({ type: "mLevels", content }));
 };
 
-function FormPage() {
+function FormPage({
+  submit,
+  service,
+}: {
+  submit: (options: SettlementOptions) => unknown;
+  service: SettlementDataStorage;
+}) {
   const state: FormState = useContext(FormContext);
   const dispatch = useContext(FormDispatchContext);
-  const dataStorage = SettlementData();
+
   const sxMid = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     gap: "1rem",
   };
+
   useEffect(() => {
-    fetchData(dispatch, dataStorage);
+    fetchData(dispatch, service);
   }, []);
 
   const canSubmit = () => {
@@ -74,9 +80,23 @@ function FormPage() {
     );
   };
 
+  const updateName = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    dispatch({
+      type: "form.name",
+      content: e.target.value,
+    });
+  };
+
   return (
     <form className="form-flex">
-      <TextField fullWidth label="Name" variant="standard" />
+      <TextField
+        fullWidth
+        label="Name"
+        variant="standard"
+        onChange={(e) => updateName(e)}
+      />
       <Box sx={sxMid}>
         <GenericSelect prop="sizes" sx={{ width: "50%" }} />
         <GenericSelect prop="incrementors" sx={{ width: "50%" }} />
@@ -96,8 +116,11 @@ function FormPage() {
         disabled={!canSubmit()}
         fullWidth
         color="success"
+        onClick={() => {
+          submit(state.formData);
+        }}
       >
-        Generate Settlement
+        Submit
       </Button>
     </form>
   );

@@ -19,7 +19,7 @@ function ClimateSelect({ prop, sx }: { prop: string; sx: SxProps<Theme> }) {
 
   const opt = (gen: string) => (
     <MenuItem value={gen} key={gen}>
-      {format(gen)} - {gen}
+      {format(gen)} 
     </MenuItem>
   );
   const format = (str: string) => {

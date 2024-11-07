@@ -1,7 +1,7 @@
 import { IClimate, ISubClimate } from "../types/climate";
 import ILandform from "../types/landform";
+import SettlementOptions from "../types/settlement-options";
 import ISpecies from "../types/species";
-
 
 interface FormState {
   climates: IClimate[];
@@ -11,16 +11,7 @@ interface FormState {
   sizes: string[];
   incrementors: string[];
   mLevels: string[];
-  formData: {
-    name: string;
-    climate?: ISubClimate;
-    landform?: ILandform;
-    archetype?: string;
-    species: ISpecies[]
-    size?: string;
-    incrementor?: string;
-    mLevel?: string;
-  }
+  formData: SettlementOptions
 }
 
 interface FormAction {
