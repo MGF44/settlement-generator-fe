@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import "./App.scss";
 import FormPage from "./pages/form/Form";
 import SettlementPage from "./pages/settlement/Settlement";
@@ -6,14 +7,18 @@ import { SettlementProvider } from "./providers/SettlementProvider";
 
 function App() {
   return (
-    <>
-      <FormProvider>
-        <FormPage />
-      </FormProvider>
-      <SettlementProvider>
-        <SettlementPage />
-      </SettlementProvider>
-    </>
+    <Box className="master-container">
+      <>
+        <FormProvider>
+          <FormPage />
+        </FormProvider>
+      </>
+      <>
+        <SettlementProvider>
+          <SettlementPage />
+        </SettlementProvider>
+      </>
+    </Box>
   );
 }
 

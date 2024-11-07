@@ -6,15 +6,23 @@ import {
 import { FormState } from "../../../reducers/form";
 import { IClimate, ISubClimate } from "../../../types/climate";
 import Generic from "../../../types/generic";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SxProps,
+  Theme,
+} from "@mui/material";
 
-function ClimateSelect() {
+function ClimateSelect({ sx }: { sx: SxProps<Theme> }) {
   const state: FormState = useContext(FormContext);
   const dispatch = useContext(FormDispatchContext);
 
   const opt = (clim: IClimate, sub: Generic) => (
-    <option value={sub.name} key={sub.name}>
-      {clim.type} - {sub.name}
-    </option>
+    <MenuItem value={sub.name} key={sub.name}>
+      {clim.type} - {sub.name.replace(/ *\([^)]*\) */g, "")}
+    </MenuItem>
   );
 
   const getOptions = () => {
@@ -23,7 +31,7 @@ function ClimateSelect() {
       .reduce((p: JSX.Element[], n: JSX.Element[]) => [...p, ...n], []);
   };
 
-  const onChange = (name: string) => {
+  const onChange = (name: unknown) => {
     const content: ISubClimate = state.climates
       .map((v: IClimate) => v.subTypes)
       .reduce((p, n) => [...p, ...n])
@@ -32,9 +40,19 @@ function ClimateSelect() {
   };
 
   return (
-    <select id="climate" onChange={(e) => onChange(e.target.value)}>
-      {getOptions()}
-    </select>
+    <FormControl variant="standard" sx={sx}>
+      <InputLabel id="Climate">Climate</InputLabel>
+      <Select
+        labelId="Climate"
+        id="climate-input"
+        onChange={(e) => onChange(e.target.value)}
+        label="Climate"
+        fullWidth
+        
+      >
+        {getOptions()}
+      </Select>
+    </FormControl>
   );
 }
 

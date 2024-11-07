@@ -1,20 +1,24 @@
 import { useContext, useEffect } from "react";
 import "./Form.scss";
-import { FormDispatchContext } from "../../contexts/FormContext";
+import { FormContext, FormDispatchContext } from "../../contexts/FormContext";
 import SettlementData, {
   SettlementDataStorage,
 } from "../../services/settlement-data";
 import { IClimate } from "../../types/climate";
 import ILandform from "../../types/landform";
 import Generic from "../../types/generic";
+import ISpecies from "../../types/species";
+import { Box, Button, TextField } from "@mui/material";
+import GenericSelect from "./components/GenericSelect";
 import ClimateSelect from "./components/ClimateSelect";
 import LandformSelect from "./components/LandformSelect";
-import GenericSelect from "./components/GenericSelect";
+import SpeciesSelect from "./components/SpeciesSelect";
+import { FormState } from "../../reducers/form";
 
 const fetchData = async (
   dispatch: (arg0: {
     type: string;
-    content: IClimate[] | Generic[] | string[];
+    content: IClimate[] | Generic[] | string[] | ISpecies[];
   }) => unknown,
   dataStorage: SettlementDataStorage
 ) => {
@@ -25,9 +29,11 @@ const fetchData = async (
     .landforms()
     .then((content: ILandform[]) => dispatch({ type: "landforms", content }));
   dataStorage
+    .species()
+    .then((content: ISpecies[]) => dispatch({ type: "species", content }));
+  dataStorage
     .archetypes()
     .then((content: string[]) => dispatch({ type: "archetypes", content }));
-
   dataStorage
     .citySize()
     .then((content: string[]) => dispatch({ type: "sizes", content }));
@@ -42,25 +48,58 @@ const fetchData = async (
 };
 
 function FormPage() {
-  // const state: FormState = useContext(FormContext);
+  const state: FormState = useContext(FormContext);
   const dispatch = useContext(FormDispatchContext);
   const dataStorage = SettlementData();
-
+  const sxMid = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: "1rem",
+  };
   useEffect(() => {
     fetchData(dispatch, dataStorage);
   }, []);
 
+  const canSubmit = () => {
+    return (
+      !!state.formData.name &&
+      !!state.formData.archetype &&
+      !!state.formData.climate &&
+      !!state.formData.incrementor &&
+      !!state.formData.landform &&
+      !!state.formData.mLevel &&
+      !!state.formData.size &&
+      !!state.formData.species.length
+    );
+  };
+
   return (
-    <aside>
-      <form action="">
-        <ClimateSelect />
-        <LandformSelect />
-        <GenericSelect prop="archetypes" />
-        <GenericSelect prop="sizes" />
-        <GenericSelect prop="incrementors" />
-        <GenericSelect prop="mLevels" />
-      </form>
-    </aside>
+    <form className="form-flex">
+      <TextField fullWidth label="Name" variant="standard" />
+      <Box sx={sxMid}>
+        <GenericSelect prop="sizes" sx={{ width: "50%" }} />
+        <GenericSelect prop="incrementors" sx={{ width: "50%" }} />
+      </Box>
+      <Box sx={sxMid}>
+        <GenericSelect prop="archetypes" sx={{ width: "50%" }} />
+        <GenericSelect prop="mLevels" sx={{ width: "50%" }} />
+      </Box>
+      <Box sx={sxMid}>
+        <ClimateSelect sx={{ width: "50%" }} />
+        <LandformSelect sx={{ width: "50%" }} />
+      </Box>
+      <SpeciesSelect />
+
+      <Button
+        variant="outlined"
+        disabled={!canSubmit()}
+        fullWidth
+        color="success"
+      >
+        Generate Settlement
+      </Button>
+    </form>
   );
 }
 

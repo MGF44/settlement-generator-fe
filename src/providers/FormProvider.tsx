@@ -4,18 +4,20 @@ import formReducer, { FormState } from "../reducers/form";
 
 export function FormProvider({ children }: { children: ReactNode }) {
   const initial: FormState = {
-    name: "",
     climates: [],
     landforms: [],
     archetypes: [],
     sizes: [],
+    species: [],
     incrementors: [],
     mLevels: [],
     formData: {
+      name: "",
       archetype: "",
       size: "",
       incrementor: "",
       mLevel: "",
+      species: [],
     },
   };
   const [state, dispatch] = useReducer(formReducer, initial);

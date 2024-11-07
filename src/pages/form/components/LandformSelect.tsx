@@ -6,28 +6,45 @@ import {
 import { FormState } from "../../../reducers/form";
 import ILandform from "../../../types/landform";
 import Generic from "../../../types/generic";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SxProps,
+  Theme,
+} from "@mui/material";
 
-function LandformSelect() {
+function LandformSelect({ sx }: { sx: SxProps<Theme> }) {
   const state: FormState = useContext(FormContext);
   const dispatch = useContext(FormDispatchContext);
 
   const opt = (c: ILandform): JSX.Element => (
-    <option value={c.name} key={c.name}>
+    <MenuItem value={c.name} key={c.name}>
       {c.name}
-    </option>
+    </MenuItem>
   );
 
   const getOptions = () => state.landforms.map(opt);
-  const onChange = (name: string) => {
+  const onChange = (name: unknown) => {
     const content: ILandform = state.landforms.filter(
       (land: Generic) => land.name === name
     )[0];
     dispatch({ type: "form.landforms", content });
   };
   return (
-    <select id="landform" onChange={(e) => onChange(e.target.value)}>
-      {getOptions()}
-    </select>
+    <FormControl variant="standard" sx={sx}>
+      <InputLabel id="Landform">Landform</InputLabel>
+      <Select
+        labelId="Landform"
+        id="landform-input"
+        onChange={(e) => onChange(e.target.value)}
+        label="Landform"
+        fullWidth
+      >
+        {getOptions()}
+      </Select>{" "}
+    </FormControl>
   );
 }
 
