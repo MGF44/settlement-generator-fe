@@ -9,9 +9,8 @@ import SettlementOptions from "./types/settlement-options";
 
 function App() {
   const service = SettlementData();
-  const options: SettlementOptions[] = [];
   const onSubmit = (opt: SettlementOptions) => {
-    options.push(opt);
+    service.genSettlement(opt);
   };
   return (
     <Box className="master-container">
@@ -22,7 +21,7 @@ function App() {
       </>
       <>
         <SettlementProvider>
-          <SettlementPage options={options} service={service} />
+          <SettlementPage />
         </SettlementProvider>
       </>
     </Box>

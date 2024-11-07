@@ -12,7 +12,7 @@ interface SettlementDataStorage {
   citySize: () => Promise<string[]>;
   incrementors: () => Promise<string[]>;
   mLevels: () => Promise<string[]>;
-  genSettlement: (body: SettlementOptions) => Promise<Response>;
+  genSettlement: (body: SettlementOptions) => Promise<void>;
 }
 
 const SettlementData = (): SettlementDataStorage => {
@@ -43,10 +43,14 @@ const SettlementData = (): SettlementDataStorage => {
   }
 
   const genSettlement = async (body: SettlementOptions) => {
-    return await fetch('http://localhost:3000/genset', {
-      method: 'POST',
-      body: JSON.stringify(body)
-    })
+    const socket = new WebSocket('ws://localhost:3001');
+    socket.addEventListener('open', () => {
+      console.log('Connected to WebSocket server.')
+      socket.send(JSON.stringify(body))
+      socket.addEventListener('message', (msg) => {
+        console.log(JSON.parse(msg.data.toString()))
+      })
+    });
 
   }
 

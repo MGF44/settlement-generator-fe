@@ -1,33 +1,27 @@
-import { useEffect } from "react";
-import { SettlementDataStorage } from "../../services/settlement-data";
-import SettlementOptions from "../../types/settlement-options";
+// import { useEffect } from "react";
+// import { SettlementDataStorage } from "../../services/settlement-data";
+// import SettlementOptions from "../../types/settlement-options";
 import "./Settlement.scss";
 
-function SettlementPage({
-  options,
-  service,
-}: {
-  options: SettlementOptions[];
-  service: SettlementDataStorage;
-}) {
-  const fetchData = async (res: Promise<Response>) => {
-    const reader = (await res).body
-      .pipeThrough(new TextDecoderStream())
-      .getReader();
+function SettlementPage() {
+  // const fetchData = async (opt: SettlementOptions) => {
+  //   const res = (await service.genSettlement(opt)).body;
+  //   const reader = res.getReader();
 
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      console.log("Received", value);
-    }
-  };
+  //   while (true) {
+  //     const { value, done } = await reader.read();
+  //     if (done) break;
+  //     console.log("Received", value);
+  //   }
+  // };
 
-  useEffect(() => {
-    const [opt] = options;
-    if (opt) {
-      fetchData(service.genSettlement(opt));
-    }
-  }, [options]);
+  // useEffect(() => {
+  //   const [opt] = options;
+  //   if (opt) {
+  //     console.log('alo')
+  //     fetchData(opt);
+  //   }
+  // }, [options]);
   return <div>test</div>;
 }
 
