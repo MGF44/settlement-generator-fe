@@ -1,13 +1,13 @@
 import "./index.css";
 import { useContext, useState } from "react";
 import usePost from "../../hooks/gen-npc";
-import { Splitter, Typography, Radio, Flex, Button } from "antd";
+import { Splitter, Typography, Radio, Flex, Button, Switch } from "antd";
 import { SpeciesList } from "../species-list";
 import GeneratorResult from "../generator-result";
 import { GeneratedDispatchContext } from "../../contexts/generated-context";
 import { useEffect } from "react";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 const TTitle = (props) => {
   const title = { margin: "0", textAlign: "center" };
   return (
@@ -22,16 +22,10 @@ export default function NPCGenerator() {
   const dispatch = useContext(GeneratedDispatchContext);
   const [species, setSpecies] = useState(null);
   const [ageGroup, setAgeGroup] = useState("RANDOM");
-
+  const [profession, setProfession] = useState(false);
+  const [charClass, setCharClass] = useState(false);
   const splitter = { height: "100%", minHeight: "100%" };
 
-  const handleSpecies = (specie) => {
-    setSpecies(specie);
-  };
-
-  const handleAge = (e) => {
-    setAgeGroup(e.target.value);
-  };
   const submit = () => {
     makePost({ species, ageGroup });
   };
@@ -50,14 +44,14 @@ export default function NPCGenerator() {
             <Flex justify="center" vertical gap="middle">
               <Flex style={{ margin: "0 auto" }} gap="small" vertical>
                 <TTitle text={"Species"} level={4} />
-                <SpeciesList handleClick={handleSpecies} />
+                <SpeciesList handleClick={setSpecies} />
               </Flex>
               <Flex style={{ margin: "0 auto" }} gap="small" vertical>
                 <TTitle text={"Age Group"} level={5} />
                 <Radio.Group
                   defaultValue="RANDOM"
                   buttonStyle="solid"
-                  onChange={handleAge}
+                  onChange={(e) => setAgeGroup(e.target.value)}
                   style={{ margin: "0 auto" }}
                 >
                   <Radio.Button value="RANDOM">Random</Radio.Button>
@@ -66,6 +60,16 @@ export default function NPCGenerator() {
                   <Radio.Button value="ADULT">Adult</Radio.Button>
                   <Radio.Button value="SENIOR">Senior</Radio.Button>
                 </Radio.Group>
+                <Flex vertical gap="middle" style={{ marginTop: "2%" }}>
+                  <Flex gap="middle">
+                    <Switch value={profession} onChange={setProfession} />
+                    <Text>Assign Random Profession</Text>
+                  </Flex>
+                  <Flex gap="middle">
+                    <Switch value={charClass} onChange={setCharClass} />
+                    <Text>Assign Random Class</Text>
+                  </Flex>
+                </Flex>
               </Flex>
             </Flex>
             <Button
