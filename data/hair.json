@@ -1,0 +1,674 @@
+[
+    {
+        "basic": {
+            "min": 1,
+            "max": 12
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 1,
+            "max": 3
+        },
+        "_id": "6707c3bd7b44abd0a52915c3",
+        "color": "Black",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 29,
+            "max": 36
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 10,
+            "max": 12
+        },
+        "_id": "6707c3bd7b44abd0a52915c6",
+        "color": "White",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 61,
+            "max": 68
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 22,
+            "max": 24
+        },
+        "_id": "6707c3bd7b44abd0a52915ca",
+        "color": "Dark Redhead",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 85,
+            "max": 92
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 31,
+            "max": 33
+        },
+        "_id": "6707c3bd7b44abd0a52915cd",
+        "color": "Brunette",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 93,
+            "max": 100
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 34,
+            "max": 36
+        },
+        "_id": "6707c3bd7b44abd0a52915ce",
+        "color": "Auburn",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 58,
+            "max": 60
+        },
+        "_id": "6707c3bd7b44abd0a52915d6",
+        "color": "Aqua",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 67,
+            "max": 69
+        },
+        "_id": "6707c3bd7b44abd0a52915d9",
+        "color": "Pale Brown",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 70,
+            "max": 72
+        },
+        "_id": "6707c3bd7b44abd0a52915da",
+        "color": "Pale Blue",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 89,
+            "max": 92
+        },
+        "_id": "6707c3bd7b44abd0a52915e0",
+        "color": "Spring Green",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 77,
+            "max": 84
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 28,
+            "max": 30
+        },
+        "_id": "6707c3bd7b44abd0a52915cc",
+        "color": "Light Redhead",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 37,
+            "max": 39
+        },
+        "_id": "6707c3bd7b44abd0a52915cf",
+        "color": "Yellow",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 40,
+            "max": 42
+        },
+        "_id": "6707c3bd7b44abd0a52915d0",
+        "color": "Amber",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 52,
+            "max": 54
+        },
+        "_id": "6707c3bd7b44abd0a52915d4",
+        "color": "Blue",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 82,
+            "max": 84
+        },
+        "_id": "6707c3bd7b44abd0a52915de",
+        "color": "Violet Red",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 69,
+            "max": 76
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 25,
+            "max": 27
+        },
+        "_id": "6707c3bd7b44abd0a52915cb",
+        "color": "Redhead",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 43,
+            "max": 45
+        },
+        "_id": "6707c3bd7b44abd0a52915d1",
+        "color": "Brown",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 46,
+            "max": 48
+        },
+        "_id": "6707c3bd7b44abd0a52915d2",
+        "color": "Hazel",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 55,
+            "max": 57
+        },
+        "_id": "6707c3bd7b44abd0a52915d5",
+        "color": "Gray",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 61,
+            "max": 63
+        },
+        "_id": "6707c3bd7b44abd0a52915d7",
+        "color": "Red",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 76,
+            "max": 78
+        },
+        "_id": "6707c3bd7b44abd0a52915dc",
+        "color": "Pale Gray",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 79,
+            "max": 81
+        },
+        "_id": "6707c3bd7b44abd0a52915dd",
+        "color": "Deep Blue",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 85,
+            "max": 88
+        },
+        "_id": "6707c3bd7b44abd0a52915df",
+        "color": "Orange",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 93,
+            "max": 96
+        },
+        "_id": "6707c3bd7b44abd0a52915e1",
+        "color": "Sea Green",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 13,
+            "max": 20
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 4,
+            "max": 6
+        },
+        "_id": "6707c3bd7b44abd0a52915c4",
+        "color": "Gray",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 21,
+            "max": 28
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 7,
+            "max": 9
+        },
+        "_id": "6707c3bd7b44abd0a52915c5",
+        "color": "Platinum",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 37,
+            "max": 44
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 13,
+            "max": 15
+        },
+        "_id": "6707c3bd7b44abd0a52915c7",
+        "color": "Dark Blonde",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 45,
+            "max": 52
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 16,
+            "max": 18
+        },
+        "_id": "6707c3bd7b44abd0a52915c8",
+        "color": "Blonde",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": 53,
+            "max": 60
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 19,
+            "max": 21
+        },
+        "_id": "6707c3bd7b44abd0a52915c9",
+        "color": "Bleach Blonde",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 49,
+            "max": 51
+        },
+        "_id": "6707c3bd7b44abd0a52915d3",
+        "color": "Green",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 64,
+            "max": 66
+        },
+        "_id": "6707c3bd7b44abd0a52915d8",
+        "color": "Purple",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 73,
+            "max": 75
+        },
+        "_id": "6707c3bd7b44abd0a52915db",
+        "color": "Pale Green",
+        "__v": 0
+    },
+    {
+        "basic": {
+            "min": -1,
+            "max": -1
+        },
+        "exotic": {
+            "min": -1,
+            "max": -1
+        },
+        "pale": {
+            "min": -1,
+            "max": -1
+        },
+        "fey": {
+            "min": 97,
+            "max": 100
+        },
+        "_id": "6707c3bd7b44abd0a52915e2",
+        "color": "Emerald Green",
+        "__v": 0
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "_id": "670900c908490fb68f22d175",
+        "name": "Dwarf",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d177",
+        "name": "Firbolg",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17e",
+        "name": "Kobold",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d180",
+        "name": "Tiefling",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d178",
+        "name": "Genasi",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d179",
+        "name": "Gnome",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17b",
+        "name": "Halfling",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d181",
+        "name": "Tortle",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d172",
+        "name": "Aarakocra",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d174",
+        "name": "Dragonborn",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d176",
+        "name": "Elf",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17a",
+        "name": "Goliath",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17c",
+        "name": "Halfelf",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17f",
+        "name": "Orc",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d173",
+        "name": "Aasimar",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    },
+    {
+        "_id": "670900c908490fb68f22d17d",
+        "name": "Human",
+        "subSpecies": [],
+        "distribution": 1,
+        "__v": 0
+    }
+]
