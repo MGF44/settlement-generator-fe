@@ -22,17 +22,29 @@ const NpcGeneratorView = () => {
 
   const { form, onSubmit } = useNpcGeneratorForm({
     onSuccess: onSuccessGenerate,
+    onError: () => {
+      setIsDialogOpen(false);
+    },
   });
 
   function onSuccessGenerate(npc: Npc) {
     setGeneratedNpc(npc);
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setIsDialogOpen(true);
+    form.handleSubmit(onSubmit)(event);
+  }
+
+  function handleCloseDialog() {
+    setIsDialogOpen(false);
+    setGeneratedNpc(undefined);
   }
 
   return (
     <div className="flex-1 flex justify-center items-center gap-4 p-6">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit}>
           <Card className="gap-0 max-w-2xl">
             <CardHeader>
               <CardTitle>Select the Modifiers</CardTitle>
@@ -69,7 +81,7 @@ const NpcGeneratorView = () => {
       <GeneratedNpcDialog
         isOpen={isDialogOpen}
         npcData={generatedNpc}
-        onClose={() => setIsDialogOpen(false)}
+        onClose={handleCloseDialog}
       />
     </div>
   );

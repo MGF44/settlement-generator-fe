@@ -6,9 +6,13 @@ import { useAgeGroup } from "./useAgeGroup";
 
 interface UseNpcGeneratorFormProps {
   onSuccess: (npc: Npc) => void;
+  onError?: () => void;
 }
 
-const useNpcGeneratorForm = ({ onSuccess }: UseNpcGeneratorFormProps) => {
+const useNpcGeneratorForm = ({
+  onSuccess,
+  onError,
+}: UseNpcGeneratorFormProps) => {
   const { ageGroupOptions } = useAgeGroup();
 
   const form = useForm<NpcGeneratorFormValues>({
@@ -22,12 +26,16 @@ const useNpcGeneratorForm = ({ onSuccess }: UseNpcGeneratorFormProps) => {
 
   const onSubmit = async (data: NpcGeneratorFormValues) => {
     try {
-      const response = (await api.post("gen/npc/", data)) as unknown as Npc;
+      const response = (await api.post("gen/npc/", {
+        ...data,
+        ...(data.species._id === "random" ? { species: undefined } : {}),
+      })) as unknown as Npc;
 
       onSuccess(response);
     } catch (error) {
+      onError?.();
       toast.error("Failed to generate NPC. Please try again.");
-      console.error("Error generating NPC:", error);
+      console.error("NPC Generation Error:", error);
     }
   };
 
