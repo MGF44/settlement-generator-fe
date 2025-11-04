@@ -14,7 +14,7 @@ import { SpeciesSelector } from "./components/SpeciesSelector";
 import { useNpcGeneratorForm } from "./hooks/useNpcGeneratorForm";
 import { useState } from "react";
 import { Npc } from "@/types/npc.interface";
-import { GeneratedNpcDialog } from "./components/GeneratedNpcCard";
+import { GeneratedNpcDialog } from "./components/GeneratedNpcDialog";
 
 const NpcGeneratorView = () => {
   const [generatedNpc, setGeneratedNpc] = useState<Npc>();

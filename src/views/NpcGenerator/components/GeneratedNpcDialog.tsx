@@ -30,23 +30,26 @@ const GeneratedNpcDialog = ({
         {npcData ? (
           <div className="grid grid-cols-2 gap-4">
             <p className="flex flex-col">
-              Name <span className="font-bold text-lg">{npcData?.name}</span>
+              Name <span className="font-bold capitalize text-lg">{npcData?.name}</span>
             </p>
             <p className="flex flex-col">
               Species{" "}
-              <span className="font-bold text-lg">{npcData?.species}</span>
+              <span className="font-bold capitalize text-lg">{npcData?.species}</span>
             </p>
             <p className="flex flex-col">
-              Hair <span className="font-bold text-lg">{npcData?.hair}</span>
+              Gender <span className="font-bold capitalize text-lg">{npcData?.gender}</span>
             </p>
             <p className="flex flex-col">
-              Eyes <span className="font-bold text-lg">{npcData?.eyes}</span>
+              Hair <span className="font-bold capitalize text-lg">{npcData?.hair}</span>
             </p>
             <p className="flex flex-col">
-              Skin <span className="font-bold text-lg">{npcData?.skin}</span>
+              Eyes <span className="font-bold capitalize text-lg">{npcData?.eyes}</span>
             </p>
             <p className="flex flex-col">
-              Age <span className="font-bold text-lg">{npcData?.age}</span>
+              Skin <span className="font-bold capitalize text-lg">{npcData?.skin}</span>
+            </p>
+            <p className="flex flex-col">
+              Age <span className="font-bold capitalize text-lg">{npcData?.age}</span>
             </p>
           </div>
         ) : (
