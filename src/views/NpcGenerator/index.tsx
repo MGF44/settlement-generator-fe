@@ -21,24 +21,24 @@ const NpcGeneratorView = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const { form, onSubmit } = useNpcGeneratorForm({
-    onSuccess: onSuccessGenerate,
+    onSuccess: setGeneratedNpc,
     onError: () => {
       setIsDialogOpen(false);
     },
   });
 
-  function onSuccessGenerate(npc: Npc) {
-    setGeneratedNpc(npc);
-  }
-
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setIsDialogOpen(true);
+
     form.handleSubmit(onSubmit)(event);
   }
 
   function handleCloseDialog() {
     setIsDialogOpen(false);
-    setGeneratedNpc(undefined);
+
+    setTimeout(() => {
+      setGeneratedNpc(undefined);
+    }, 300);
   }
 
   return (
